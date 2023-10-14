@@ -20,6 +20,14 @@
   padding: 0 35px;
 }
 
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 1;
+  background: white;
+  border: 1px solid #f7a582;
+  color: #f7a582;
+}
+
 @media only screen and (max-width: 768px) {
   .swiper-slide.swiper-slide-active {
     width: 100% !important;

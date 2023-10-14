@@ -1,0 +1,12 @@
+.rr--dir-x {
+  max-width: 130px !important;
+}
+
+.rr--space-sm .rr--svg {
+  padding: 0%;
+}
+
+.rr--svg {
+  width: 24px;
+  flex-grow: 0;
+}
