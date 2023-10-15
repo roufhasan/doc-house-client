@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import Contact from "../Contact/Contact";
 import ExpertDoctors from "../ExpertDoctors/ExpertDoctors";
 import InfoCards from "../InfoCards/InfoCards";
 import Services from "../Services/Services";
@@ -12,6 +13,7 @@ const Home = () => {
       <InfoCards />
       <Testimonials />
       <ExpertDoctors />
+      <Contact />
     </section>
   );
 };
