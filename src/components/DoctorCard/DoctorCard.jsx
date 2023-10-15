@@ -44,7 +44,7 @@ const DoctorCard = ({ doctor }) => {
         </div>
       </div>
       <Link
-        to={`/doctor/${_id}`}
+        to={`/doctors/${_id}`}
         className="text-xl font-bold text-[#F7A582] py-[14px] border border-[#F7A582] rounded-[10px] block text-center mt-5 hover:bg-[#F7A582] hover:text-white transition-all"
       >
         View Profile
