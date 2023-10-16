@@ -1,11 +1,22 @@
-import Container from "../Container";
-import logo from "../../assets/icon/logo.png";
+import logo from "../../../assets/icon/logo.png";
 import { Link } from "react-router-dom";
 import { FaBars, FaX } from "react-icons/fa6";
 import { useState } from "react";
+import Container from "../../../Shared/Container";
 
-const Navbar = () => {
+const HomeNavbar = () => {
   const [menu, setMenu] = useState(false);
+
+  const [colorChange, setColorchange] = useState(false);
+
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 150) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
 
   const navOptions = (
     <>
@@ -31,7 +42,11 @@ const Navbar = () => {
   );
   return (
     <Container>
-      <nav className=" px-[4%] bg-[#07332F] pb-5 md:pb-3 flex items-center justify-between text-white w-full max-w-[1920px] pt-[40px] z-40">
+      <nav
+        className={`${
+          colorChange ? "bg-[#07332F] pb-5 md:pb-3" : "bg-transparent"
+        } px-[4%] flex items-center justify-between text-white fixed w-full max-w-[1920px] pt-[40px] z-40 `}
+      >
         <div className="flex items-center justify-center gap-[10px]">
           <img src={logo} alt="" className="w-9 md:w-[60px]" />
           <h1 className="text-xl font-bold md:text-4xl">
@@ -59,4 +74,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default HomeNavbar;

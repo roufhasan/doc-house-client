@@ -10,12 +10,11 @@ const DoctorCard = ({ doctor }) => {
     activeFillColor: "#F2871D",
     inactiveFillColor: "#ffd0a2",
   };
-  const { profileImg, name, speciality, rating, address, date, fees, _id } =
-    doctor;
+  const { images, name, speciality, rating, address, date, fees, _id } = doctor;
   return (
     <div className="border border-[#E6E6E6] rounded-[10px] p-5">
       <img
-        src={profileImg}
+        src={images.profileImg}
         alt=""
         className="rounded-[10px] h-[190px] md:h-[258px] w-full object-cover object-top"
       />

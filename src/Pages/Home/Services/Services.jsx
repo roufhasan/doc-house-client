@@ -7,7 +7,7 @@ import "./Services.css";
 const Services = () => {
   return (
     <section className="px-[3%] my-8 md:my-[130px] md:flex justify-between gap-6">
-      <img src={doctor4} alt="" className="" />
+      <img src={doctor4} alt="" className="md:w-1/2 object-cover" />
       <div className="md:w-1/2 mt-8 md:mt-0">
         <h1 className="font-bold text-[40px] text-center md:text-left">
           Our Services
