@@ -23,9 +23,9 @@ const DoctorDetails = () => {
         </div>
 
         <TabPanel>
-          <div className="text-center md:text-left">
+          <div className="text-left text-[#3B3A3A] p-5 md:p-0">
             <p className="text-xl font-bold mb-[10px]">About Me</p>
-            <p className="max-w-[90%]">
+            <p className="max-w-[90%] text-sm md:text-base">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -103,7 +103,7 @@ const DoctorDetails = () => {
               <div>
                 {/* Awards */}
                 <div>
-                  <p className="text-xl font-bold mt-[10px]">Awards</p>
+                  <p className="text-xl font-bold mt-10 md:mt-[10px]">Awards</p>
                   <ul className="list-disc pl-8 mt-6">
                     <div>
                       <p className="mb-1">July 2019</p>

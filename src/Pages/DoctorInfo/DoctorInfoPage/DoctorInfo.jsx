@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-import Container from "../../Shared/Container";
-import DoctorInfoBanner from "./DoctorInfoBanner";
-import DoctorProfile from "./DoctorProfile";
-import DoctorDetails from "./DoctorDetails";
+import Container from "../../../Shared/Container";
+import DoctorInfoBanner from "../DoctorInfoBanner/DoctorInfoBanner";
+import DoctorProfile from "../DoctorProfile/DoctorProfile";
+import DoctorDetails from "../DcotorDetils/DoctorDetails";
 
 const DoctorInfo = () => {
   const doctorInfo = useLoaderData();

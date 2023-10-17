@@ -26,11 +26,13 @@ const DoctorProfile = ({ doctorInfo }) => {
         <img
           src={bigImage}
           alt=""
-          className="w-[350px] h-96 object-cover object-top rounded-[10px]"
+          className="w-[295px] h-[250px] md:w-[350px] md:h-96 object-cover object-top rounded-[10px]"
         />
       </div>
       <div>
-        <h1 className="text-[40px] font-bold">{name}</h1>
+        <h1 className="text-[25px] mt-5 mb-2 md:my-0 md:text-[40px] font-bold">
+          {name}
+        </h1>
         <p className="text-lg text-[#6C6B6B]">{speciality}</p>
         <Rating
           style={{ maxWidth: 180 }}

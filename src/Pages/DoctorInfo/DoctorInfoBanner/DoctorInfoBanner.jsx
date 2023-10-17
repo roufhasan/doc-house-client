@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import vector1 from "../../assets/home/Vector1.png";
-import vector3 from "../../assets/home/Vector3.png";
-import vector4 from "../../assets/home/Vector4.png";
+import vector1 from "../../../assets/home/Vector1.png";
+import vector3 from "../../../assets/home/Vector3.png";
+import vector4 from "../../../assets/home/Vector4.png";
 
 const DoctorInfoBanner = () => {
   return (
