@@ -5,8 +5,7 @@ import { useState } from "react";
 
 const DoctorProfile = ({ doctorInfo }) => {
   console.log(doctorInfo);
-  const { images, name, speciality, rating, address, date, fees, _id } =
-    doctorInfo;
+  const { images, name, speciality, rating, address, _id } = doctorInfo;
 
   const { allImages } = images;
 
@@ -43,7 +42,7 @@ const DoctorProfile = ({ doctorInfo }) => {
         <div className="text-[#6C6B6B] flex items-center gap-5">
           <CiLocationOn size={19} /> {address}
         </div>
-        <div className="flex gap-[15px] my-5">
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-[15px] my-5">
           {allImages.map((images, index) => (
             <img
               onClick={() => hanldeImages(index)}
