@@ -1,13 +1,14 @@
 import logo from "../../../assets/icon/logo.png";
 import { Link } from "react-router-dom";
 import { FaBars, FaX } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Container from "../../../Shared/Container";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const HomeNavbar = () => {
   const [menu, setMenu] = useState(false);
-
   const [colorChange, setColorchange] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
   const changeNavbarColor = () => {
     if (window.scrollY >= 150) {
@@ -17,6 +18,13 @@ const HomeNavbar = () => {
     }
   };
   window.addEventListener("scroll", changeNavbarColor);
+
+  // Log out
+  const logOutUser = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err.message));
+  };
 
   const navOptions = (
     <>
@@ -30,7 +38,11 @@ const HomeNavbar = () => {
         <Link to="/appoinment">Appointment</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        {user ? (
+          <Link onClick={() => logOutUser()}>Log out</Link>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </li>
       <li
         onClick={() => setMenu(false)}
