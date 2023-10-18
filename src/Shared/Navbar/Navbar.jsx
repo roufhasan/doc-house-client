@@ -16,6 +16,8 @@ const Navbar = () => {
       .catch((err) => console.log(err.message));
   };
 
+  // This is a testing code for fixing github contibuiton display settings.
+
   const navOptions = (
     <>
       <li>
