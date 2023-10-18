@@ -2,10 +2,19 @@ import Container from "../Container";
 import logo from "../../assets/icon/logo.png";
 import { Link } from "react-router-dom";
 import { FaBars, FaX } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  // Log out
+  const logOutUser = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err.message));
+  };
 
   const navOptions = (
     <>
@@ -19,7 +28,11 @@ const Navbar = () => {
         <Link to="/appoinment">Appointment</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        {user ? (
+          <Link onClick={() => logOutUser()}>Log out</Link>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </li>
       <li
         onClick={() => setMenu(false)}
