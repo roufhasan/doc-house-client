@@ -1,17 +1,36 @@
 import { useForm } from "react-hook-form";
 import Container from "../../Shared/Container";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import docWithMedicine from "../../assets/authentication/Doc-with-medicine.png";
 import frameImg from "../../assets/authentication/Frame.png";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import toast from "react-hot-toast";
+import { BeatLoader } from "react-spinners";
 
 const Login = () => {
+  const { signIn, loading, setLoading } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const handleLogin = (data) => console.log(data);
+  const handleLogin = (data) => {
+    signIn(data.email, data.password)
+      .then((res) => {
+        console.log(res.user);
+        toast.success("Welcome To Doc House😀");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setLoading(false);
+        toast.error(err.message);
+      });
+  };
   return (
     <Container>
       <section className="md:flex items-center gap-28 md:pr-[10%] h-[789px] max-h-[1024px]">
@@ -74,11 +93,15 @@ const Login = () => {
                 </p>
               )}
               <br />
-              <input
+              <button
+                disabled={loading}
                 type="submit"
-                value="Log In"
-                className="text-xl font-bold text-white bg-[#F7A582] rounded-[10px] w-full py-5 capitalize cursor-pointer mb-4 md:mb-6"
-              />
+                className={` ${
+                  loading && "bg-[#f7a58291]"
+                } text-xl font-bold text-white bg-[#F7A582] rounded-[10px] w-full py-5 capitalize cursor-pointer mb-4 md:mb-6`}
+              >
+                {loading ? <BeatLoader color="black" /> : "Log In"}
+              </button>
             </form>
             <p className="text-[#6C6B6B] text-lg text-center">
               Please register at first. Go to{" "}
